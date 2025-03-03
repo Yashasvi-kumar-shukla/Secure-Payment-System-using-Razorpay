@@ -10,7 +10,7 @@ def comfy_payment(request):
         if form.is_valid():
             name = form.cleaned_data["name"]
             amount = int(float(form.cleaned_data["amount"]) * 100)  # Convert to paise
-            client = razorpay.Client(auth=('rzp_test_hn5vHBYl6Jcunz', 'l4gTqdTNd155vnP0B4i5OEcG'))
+            client = razorpay.Client(auth=('API_key', 'Secret_key'))
             response_payment = client.order.create(dict(
                 amount=amount,
                 currency="INR",
